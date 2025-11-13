@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ultimate Meal Plans — Week View</title>
+    <style>
+         :root {
+            --green: #2e7a60;
+            --muted: #f5f8f7;
+            --card: #ffffff;
+            --text: #304040;
+            --accent: #e9f5f1;
+            --line: #e2e8e5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            margin: 0;
+            background: var(--muted);
+            color: var(--text)
+        }
+        
+        header {
+            background: var(--green);
+            color: white;
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+        
+        .logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700
+        }
+        
+        .brand h1 {
+            font-size: 18px;
+            margin: 0
+        }
+        
+        .nav {
+            display: flex;
+            gap: 18px;
+            align-items: center
+        }
+        
+        .nav a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            font-size: 14px
+        }
+        
+        .container {
+            max-width: 1150px;
+            margin: 28px auto;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 28px;
+            padding: 0 18px
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 6px;
+            padding: 20px;
+            border: 1px solid var(--line)
+        }
+        
+        .title {
+            font-weight: 600;
+            color: #2f4c46;
+            margin-bottom: 14px
+        }
+        /* Meal area */
+        
+        .days {
+            display: flex;
+            flex-direction: column;
+            gap: 22px
+        }
+        
+        .day {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+        
+        .day h3 {
+            margin: 0;
+            font-weight: 600;
+            color: #6b8b83
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: 6px;
+            padding: 10px;
+            border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start
+        }
+        
+        .card img {
+            width: 100%;
+            height: 84px;
+            object-fit: cover;
+            border-radius: 4px
+        }
+        
+        .caption {
+            font-size: 13px;
+            color: #6a7b77
+        }
+        /* Sidebar actions */
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+        
+        .action {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            border-radius: 6px;
+            background: linear-gradient(180deg, white, #fbfffd);
+            border: 1px solid var(--line);
+            cursor: pointer
+        }
+        
+        .action small {
+            color: #6b8b83
+        }
+        /* Responsive */
+        
+        @media (max-width:980px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .cards {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+        
+        @media (max-width:480px) {
+            .cards {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo">U</div>
+            <div>
+                <h1>Ultimate Meal Plans</h1>
+                <div style="font-size:12px;opacity:0.9">January 8th — 14th</div>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="#">Dashboard</a>
+            <a href="#">Account</a>
+            <a href="#">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <div class="title">Weekly meal plan</div>
+
+            <div class="days">
+                <!-- Monday -->
+                <div class="day">
+                    <h3>Monday</h3>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/pumpkin/400/200" alt="Pumpkin Walnut Breakfast">
+                            <div class="caption">Pumpkin Walnut Breakfast Bowl</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/chili/400/200" alt="Chili">
+                            <div class="caption">No Bean Chili</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/shrimp/400/200" alt="Shrimp Scampi">
+                            <div class="caption">Shrimp Scampi</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/deli/400/200" alt="Deli Meat">
+                            <div class="caption">Deli Meat + Sauerkraut</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuesday -->
+                <div class="day">
+                    <h3>Tuesday</h3>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/bacon/400/200" alt="Bacon">
+                            <div class="caption">Bacon and Scrambled Eggs</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/stirfry/400/200" alt="Shrimp Stir Fry">
+                            <div class="caption">Shrimp Stir Fry</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/salad/400/200" alt="Prosciutto Salad">
+                            <div class="caption">Italian Prosciutto Salad</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/driedfruit/400/200" alt="Dried Fruit">
+                            <div class="caption">Dried Fruit + Walnuts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wednesday -->
+                <div class="day">
+                    <h3>Wednesday</h3>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/grits/400/200" alt="Grits">
+                            <div class="caption">AIP "Grits"</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/steak/400/200" alt="Steak Salad">
+                            <div class="caption">Steak Salad</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/salmonsalad/400/200" alt="Salmon Salad">
+                            <div class="caption">Salmon Salad with Winter Fruit</div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/avocado/400/200" alt="Canned Salmon">
+                            <div class="caption">Canned Salmon + Avocado</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <aside class="panel sidebar">
+            <div class="title">Plan actions</div>
+            <div class="action">
+                <div style="font-weight:600">View meal plan</div><small style="margin-left:auto">›</small></div>
+            <div class="action">
+                <div>Download meal plan</div><small style="margin-left:auto">›</small></div>
+            <div class="action">
+                <div>View shopping list</div><small style="margin-left:auto">›</small></div>
+            <div class="action">
+                <div>Download shopping list</div><small style="margin-left:auto">›</small></div>
+            <div class="action">
+                <div>Shuffle this plan</div><small style="margin-left:auto">›</small></div>
+            <div class="action">
+                <div>Exclude ingredients</div><small style="margin-left:auto">›</small></div>
+            <div class="action">
+                <div>Choose another diet</div><small style="margin-left:auto">›</small></div>
+        </aside>
+    </main>
+</body>
+
+</html>
